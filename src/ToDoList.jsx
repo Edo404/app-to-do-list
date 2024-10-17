@@ -7,16 +7,19 @@ function ToDoList(){
     function handleInputChange(event){
         setNewTask(event.target.value)
     }
+
     function addTask(){
         if(newTask.trim() !== ""){
             setTasks(t => [...t, newTask]);
             setNewTasks("");
         }
     }
+
     function deleteTask(index){
         const updatedTasks = tasks.filter((_, i) => i !== index);
         setTasks(updatedTasks);
     }
+
     function moveTaskUp(index){
         if(index > 0){
             const updatedTasks = [...tasks];
@@ -25,6 +28,7 @@ function ToDoList(){
             setTasks(updatedTasks);
         }
     }
+
     function moveTaskDown(index){
         if(index < tasks.length - 1){
             const updatedTasks = [...tasks];
@@ -47,7 +51,7 @@ function ToDoList(){
                 <button 
                     className="add-button"
                     onClick={addTask}>
-                        Add
+                    Add
                 </button>
             </div>
 
